@@ -1,31 +1,35 @@
 package test;
 
 import java.io.IOException;
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
+
 import org.apache.poi.EncryptedDocumentException;
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import pojo.ChromeBrowser;
+import pojo.LaunchBrowser;
 import pom.AutoLogin;
 import pom.WatchList;
 import utility.Reports;
-@Listeners(Listener.class)
+@Listeners( {Listener.class})
 
 public class WatchlistTest extends BaseTest  {
 	
 	@BeforeMethod
 	public void BrowserLaunch() throws EncryptedDocumentException, InterruptedException, IOException {
-		
-		driver=ChromeBrowser.openBrowser();
+		driver= LaunchBrowser.openBrowser();
+		//driver=ChromeBrowser.openBrowser();
 		AutoLogin.login(driver);
-
-		
 	}
+	
 	@AfterMethod
 	public  void closedbrowser() {
-		Reports.PostExcution();
+		//Reports.PostExcution();
 		driver.close();
 		
 	}
@@ -49,19 +53,21 @@ public class WatchlistTest extends BaseTest  {
 	@Test
 	public void SearchStockFromWatchlistAndBuy() throws InterruptedException {
 		WatchList watchList=new WatchList(driver);
-	Thread.sleep(2000);
-	watchList.numberofcountinwatchlist();
+	
+	//watchList.numberofcountinwatchlist();
 	watchList.selectstockfromwatchlist(driver,"ADANIENT");
-	Thread.sleep(1000);
+	
 	//watchList.clickOnBuy(driver);
 	
 	}
+	
 	
 	@Test
 	public void WatchListTable() throws InterruptedException {
 		WatchList watchlist=new  WatchList(driver);
 		Thread.sleep(2000);
 		watchlist.WatchListTable(driver);
+		driver.manage().timeouts().implicitlyWait(1000,TimeUnit.MICROSECONDS);
 	
 	}
 

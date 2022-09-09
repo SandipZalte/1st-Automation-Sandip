@@ -3,17 +3,18 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="test.WatchlistTest">
+      <class name="test.ZerodaHomePageTest">
         <methods>
-          <include name="CreateReport"/>
-          <include name="BrowserLaunch"/>
-          <include name="SearchStockFromWatchlistAndBuy"/>
-          <include name="closedbrowser"/>
-          <include name="SearchStock"/>
-          <include name="WatchListTable"/>
-          <include name="PublishReport"/>
+          <include name="publishReport"/>
+          <include name="searchStockAndClickOnChart"/>
+          <include name="PostExecution"/>
+          <include name="ClosedtheLaunchBrowser"/>
+          <include name="serachStockAndClickOnBuyWithRegularCNCMarketOrder"/>
+          <include name="serachStockAndClickOnSell"/>
+          <include name="launchBrowser"/>
+          <include name="ConfigureReport"/>
         </methods>
-      </class> <!-- test.WatchlistTest -->
+      </class> <!-- test.ZerodaHomePageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

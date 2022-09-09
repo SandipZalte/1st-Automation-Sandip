@@ -1,7 +1,12 @@
 package test;
 
 import java.io.IOException;
+import java.time.Duration;
+
 import org.apache.poi.EncryptedDocumentException;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
@@ -17,107 +22,110 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
-import pojo.ChromeBrowser;
+import dev.failsafe.Timeout;
 import pom.ZerodaLoginPage;
 import utility.Excel;
 
-@Listeners (Listener.class)
+@Listeners(Listener.class)
 public class ZerodaLoginPageTest extends BaseTest {
-	
+
 	ExtentReports extent;
 	ExtentTest test;
-	
+
 	@AfterClass
 	public void ClosedBrowser() {
-		driver.quit();
+		// driver.quit();
 	}
+
 	@BeforeTest()
 	public void ConfigureReport() {
-		extent= new ExtentReports();
-		ExtentSparkReporter htmlReports= new ExtentSparkReporter("extentReport.html");
+		extent = new ExtentReports();
+		ExtentSparkReporter htmlReports = new ExtentSparkReporter("extentReport.html");
 		extent.attachReporter(htmlReports);
-	
+
 		extent.setSystemInfo("Syatem", "Lenvog50");
-		extent.setSystemInfo("Envornment","Testing" );
+		extent.setSystemInfo("Envornment", "Testing");
 		extent.setSystemInfo("test", "ZerodaLoginPage");
 		extent.setSystemInfo("Tester", "Sandip");
-		
+
 	}
-	
+
 	@AfterTest
 	public void publishReport() {
 		extent.flush();
-		
+
 	}
+
 	@BeforeMethod
 	public void LaunchBrowser() {
-		driver = ChromeBrowser.openBrowser();
+		driver = pojo.LaunchBrowser.openBrowser();
+		// driver = ChromeBrowser.openBrowser();
 
 	}
-	
+
 	@AfterMethod
-	public void PostExcution(ITestResult result) {
-		
-		if(result.getStatus()==ITestResult.SUCCESS)
-			{
-				test.log(Status.PASS,result.getName());
-			
-			}
-		else if(result.getStatus()==ITestResult.FAILURE)
-			{
-				test.log(Status.FAIL, result.getName());
-			}
-		else 
-		{
+	public void PostExcution(ITestResult result)  throws InterruptedException{
+
+		if (result.getStatus() == ITestResult.SUCCESS) {
+			test.log(Status.PASS, result.getName());
+
+		} 
+		else if (result.getStatus() == ITestResult.FAILURE) {
+			test.log(Status.FAIL, result.getName());
+		}
+		else {
 			test.log(Status.SKIP, result.getName());
 		}
+			
+			
+			driver.close();
 		
-		driver.close();
-		
-		
-		
+
 	}
-	
-		@Test
-		public void LoginWithValidCredentials() throws EncryptedDocumentException, IOException, InterruptedException {
-			test=extent.createTest("LoginWithValidCredentials");
-			
-			
-			ZerodaLoginPage zerodaLoginPage=new ZerodaLoginPage(driver);
-			String ExpectedTitle=driver.getTitle();
-			String ActualTitle="Kite - Zerodha's fast and elegant flagship trading platform";
-			Assert.assertEquals(ActualTitle, ExpectedTitle,"Title Should Mismatch Please checked Actual and Expected Result");// Hard assert
+
+	@Test
+	public void LoginWithValidCredentials() throws EncryptedDocumentException, IOException, InterruptedException {
+		test=extent.createTest("LoginWithValidCredentials");
+
+		ZerodaLoginPage zerodaLoginPage = new ZerodaLoginPage(driver);
+		String ExpectedTitle = driver.getTitle();
+		String ActualTitle = "Kite - Zerodha's fast and elegant flagship trading platform";
+		Assert.assertEquals(ActualTitle, ExpectedTitle, "Page Title is Mismatch");// Hard assertion used here
 //			SoftAssert soft=new  SoftAssert();
 //			soft.assertEquals(ActualTitle, ExpectedTitle, "Title Should Mismatch");			
-			
-			
-			String id=Excel.getdata("kite", 1, 0);
-			String pass=Excel.getdata("kite", 1, 1);
-			String pinNumber=Excel.getdata("kite",1,2);
-			
-			zerodaLoginPage.enteruserid(id);
-			zerodaLoginPage.enterpassword(pass);
-			zerodaLoginPage.clickonLogin();
 
-			zerodaLoginPage.enterpin(driver, pinNumber);
-			zerodaLoginPage.clickonContinue();
-		}
+		String id = Excel.getdata("kite", 1, 0);
+		String pass = Excel.getdata("kite", 1, 1);
+		String pinNumber = Excel.getdata("kite", 1, 2);
+
+		zerodaLoginPage.enteruserid(id);
+		zerodaLoginPage.enterpassword(pass);
+		zerodaLoginPage.clickonLogin();
+
+		zerodaLoginPage.enterpin(driver, pinNumber);
+		zerodaLoginPage.clickonContinue();
+	}
 
 	@Test
 	public void SignUpNow() throws EncryptedDocumentException, IOException, InterruptedException {
+
+		test = extent.createTest("SignUpNow");
 		ZerodaLoginPage zerodaLoginPage = new ZerodaLoginPage(driver);
 		zerodaLoginPage.clickonsignup();
-		
+
 		zerodaLoginPage.SwitchFocussignuppage(driver);
-		
-		String mobiNum =Excel.getdata("kite",1,3);
+
+		String mobiNum = Excel.getdata("kite", 1, 3);
 		zerodaLoginPage.entermobiNumbera(mobiNum);
 		zerodaLoginPage.clickonContinueSignup();
 
 	}
+
 	@Test
 	public void forgetAccount() throws EncryptedDocumentException, IOException, InterruptedException {
-		ZerodaLoginPage zerodaLoginPage=new ZerodaLoginPage(driver);
+		test=extent.createTest(" forgetAccount"); //we need add the test report of every method 
+		//without this it script show the error or method will skipped
+				ZerodaLoginPage zerodaLoginPage=new ZerodaLoginPage(driver);
 		String a=Excel.getdata("kite", 7, 0);
 		String b=Excel.getdata("kite", 7, 1);
 		String c=Excel.getdata("kite", 7, 4);
@@ -127,8 +135,4 @@ public class ZerodaLoginPageTest extends BaseTest {
 		zerodaLoginPage.forgetusingid(a,b,c);
 	
 	}
-	
-	
-	
-
 }

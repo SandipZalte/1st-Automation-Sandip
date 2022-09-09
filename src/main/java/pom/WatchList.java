@@ -23,12 +23,12 @@ import org.testng.asserts.SoftAssert;
 public class WatchList {
 	@FindBy(xpath="//input[@icon='search']")private WebElement search;
 	@FindBy(xpath="//span[contains(text(),' / 50')]")private WebElement numberofcount;
-	@FindBy(xpath = "//div[@class='vddl-list list-flat']")private List<WebElement> watchlist;
+	@FindBy(xpath = "//span[@class='nice-name']")private List<WebElement> watchlist;
 	
 	@FindBy(xpath = "//span[contains(text(),'')]//span[@class='nice-name']")private List<WebElement> watchliststockname;
 	@FindBy(xpath = "//body/div[@id='app']/div[2]/div[1]/div[1]/div[2]/div[1]/div[4]/div[1]/span[1]")private WebElement actionspan;
 	
-	@FindBy(xpath = "//body/div[@id='app']/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/span[1]/span[1]")private WebElement buy;
+	@FindBy(xpath = "//button[@class='button-blue buy']")private WebElement buy;
 	@FindBy(xpath = "//body/div[@id='app']/div[2]/div[1]/div[1]/div[2]/div[1]/div[4]/div[1]/span[1]/span[2]/button[1]")private WebElement sell;
 	@FindBy(xpath = "//span[@class='icon icon-align-center']")private WebElement marketdepth;
 	@FindBy(xpath = "//span[@class='icon icon-trending-up']")private WebElement chart;
@@ -69,41 +69,34 @@ public class WatchList {
 	
 	}
 
-	public void selectstockfromwatchlist(WebDriver driver,String EnterstockName) throws InterruptedException {
-		int size=	watchliststockname.size();
-		
-		 
-		for(int i=0;i<size;i++) {
-			WebElement StockName=watchliststockname.get(i);
-			String ExpectedTitle=StockName.getText();
-			 
-			
-			String ActualstockName=EnterstockName;
-			if(ExpectedTitle.equals(ActualstockName))
-				
-				
-			{	
-			ActualstockName=ExpectedTitle;
-			System.out.println(ExpectedTitle);}
-			 Actions actions = new Actions(driver);
-			Thread.sleep(1000);
-			WebElement name=driver.findElement(By.xpath("//*[@id=\"app\"]/div[2]/div[1]/div/div[2]/div[2]/div[4]/div/div/span[1]/span/span"));
-			System.out.println("my name is" +name.getText());
-			
-			 actions.click().click(driver.findElement(By.xpath("//button[contains(text(),'B')]")));
-			 //actions.sendKeys(Keys.TAB.ENTER);
+	public void selectstockfromwatchlist(WebDriver driver, String EnterstockName) throws InterruptedException {
+		int size = watchliststockname.size();
+
+		for (int i = 0; i < size; i++) {
+			WebElement StockName = watchliststockname.get(i);
+			String ExpectedTitle = StockName.getText();
+
+			String ActualstockName = EnterstockName;
+			if (ExpectedTitle.equals(ActualstockName))
+
+			{
+				System.out.println(ExpectedTitle);
+			Actions actions = new Actions(driver);
+			actions.moveToElement(StockName);
+			actions.doubleClick();
 			actions.build().perform();
-			
-			
-				
-					//break.
-			
+			}
+//
+//			// break.
+
 		}
-}
+	}
 	public void clickOnBuy(WebDriver driver) {
-		 Actions actions = new Actions(driver);
-		 actions.click().sendKeys(Keys.TAB.ENTER);
-		 actions.build().perform();
+		buy.click();
+		
+//		 Actions actions = new Actions(driver);
+//		 actions.click().sendKeys(Keys.TAB.ENTER);
+//		 actions.build().perform();
 	
 		
 

@@ -1,82 +1,249 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="1" failed="0" skipped="3">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-07-27T14:43:56 IST" name="Suite" finished-at="2022-07-27T14:44:33 IST" duration-ms="36326">
+  <suite started-at="2022-08-31T20:23:49 IST" name="Default suite" finished-at="2022-08-31T20:24:28 IST" duration-ms="38385">
     <groups>
     </groups>
-    <test started-at="2022-07-27T14:43:56 IST" name="Test" finished-at="2022-07-27T14:44:33 IST" duration-ms="36326">
-      <class name="test.ZerodaLoginPageTest">
-        <test-method is-config="true" signature="ConfigureReport()[pri:0, instance:test.ZerodaLoginPageTest@201a4587]" started-at="2022-07-27T14:43:56 IST" name="ConfigureReport" finished-at="2022-07-27T14:43:57 IST" duration-ms="710" status="PASS">
+    <test started-at="2022-08-31T20:23:49 IST" name="Default test" finished-at="2022-08-31T20:24:28 IST" duration-ms="38385">
+      <class name="test.ZerodaHomePageTest">
+        <test-method is-config="true" signature="ConfigureReport()[pri:0, instance:test.ZerodaHomePageTest@771a660]" started-at="2022-08-31T20:23:49 IST" name="ConfigureReport" finished-at="2022-08-31T20:23:50 IST" duration-ms="632" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ConfigureReport -->
-        <test-method is-config="true" signature="LaunchBrowser()[pri:0, instance:test.ZerodaLoginPageTest@201a4587]" started-at="2022-07-27T14:43:57 IST" name="LaunchBrowser" finished-at="2022-07-27T14:44:07 IST" duration-ms="10145" status="PASS">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:test.ZerodaHomePageTest@771a660]" started-at="2022-08-31T20:23:50 IST" name="launchBrowser" finished-at="2022-08-31T20:24:19 IST" duration-ms="29199" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- LaunchBrowser -->
-        <test-method signature="LoginWithValidCredentials()[pri:0, instance:test.ZerodaLoginPageTest@201a4587]" started-at="2022-07-27T14:44:07 IST" name="LoginWithValidCredentials" finished-at="2022-07-27T14:44:11 IST" duration-ms="3233" status="PASS">
+        </test-method> <!-- launchBrowser -->
+        <test-method signature="serachStockAndClickOnBuyWithRegularMISMarketOrder()[pri:0, instance:test.ZerodaHomePageTest@771a660]" started-at="2022-08-31T20:24:19 IST" name="serachStockAndClickOnBuyWithRegularMISMarketOrder" finished-at="2022-08-31T20:24:27 IST" duration-ms="8020" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- LoginWithValidCredentials -->
-        <test-method is-config="true" signature="PostExcution(org.testng.ITestResult)[pri:0, instance:test.ZerodaLoginPageTest@201a4587]" started-at="2022-07-27T14:44:11 IST" name="PostExcution" finished-at="2022-07-27T14:44:11 IST" duration-ms="357" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=LoginWithValidCredentials status=SUCCESS method=ZerodaLoginPageTest.LoginWithValidCredentials()[pri:0, instance:test.ZerodaLoginPageTest@201a4587] output={null}]]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- serachStockAndClickOnBuyWithRegularMISMarketOrder -->
+        <test-method is-config="true" signature="ClosedtheLaunchBrowser()[pri:0, instance:test.ZerodaHomePageTest@771a660]" started-at="2022-08-31T20:24:27 IST" name="ClosedtheLaunchBrowser" finished-at="2022-08-31T20:24:28 IST" duration-ms="317" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- PostExcution -->
-        <test-method is-config="true" signature="LaunchBrowser()[pri:0, instance:test.ZerodaLoginPageTest@201a4587]" started-at="2022-07-27T14:44:11 IST" name="LaunchBrowser" finished-at="2022-07-27T14:44:17 IST" duration-ms="5687" status="PASS">
+        </test-method> <!-- ClosedtheLaunchBrowser -->
+        <test-method is-config="true" signature="PostExecution()[pri:0, instance:test.ZerodaHomePageTest@771a660]" started-at="2022-08-31T20:24:28 IST" name="PostExecution" finished-at="2022-08-31T20:24:28 IST" duration-ms="1" status="FAIL">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+at utility.Reports.PostExcution(Reports.java:43)
+at test.ZerodaHomePageTest.PostExecution(ZerodaHomePageTest.java:42)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:700)
+at org.testng.internal.TestInvoker.runAfterGroupsConfigurations(TestInvoker.java:676)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:660)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- LaunchBrowser -->
-        <test-method signature="SignUpNow()[pri:0, instance:test.ZerodaLoginPageTest@201a4587]" started-at="2022-07-27T14:44:17 IST" name="SignUpNow" finished-at="2022-07-27T14:44:18 IST" duration-ms="1867" status="PASS">
+        </test-method> <!-- PostExecution -->
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:test.ZerodaHomePageTest@771a660]" started-at="2022-08-31T20:24:28 IST" name="launchBrowser" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1661957668165" status="SKIP">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SignUpNow -->
-        <test-method is-config="true" signature="PostExcution(org.testng.ITestResult)[pri:0, instance:test.ZerodaLoginPageTest@201a4587]" started-at="2022-07-27T14:44:18 IST" name="PostExcution" finished-at="2022-07-27T14:44:19 IST" duration-ms="71" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=SignUpNow status=SUCCESS method=ZerodaLoginPageTest.SignUpNow()[pri:0, instance:test.ZerodaLoginPageTest@201a4587] output={null}]]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- launchBrowser -->
+        <test-method signature="serachStockAndClickOnBuyWithRegularCNCMarketOrder()[pri:1, instance:test.ZerodaHomePageTest@771a660]" started-at="2022-08-31T20:24:28 IST" name="serachStockAndClickOnBuyWithRegularCNCMarketOrder" finished-at="2022-08-31T20:24:28 IST" duration-ms="0" status="SKIP">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+at utility.Reports.PostExcution(Reports.java:43)
+at test.ZerodaHomePageTest.PostExecution(ZerodaHomePageTest.java:42)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:700)
+at org.testng.internal.TestInvoker.runAfterGroupsConfigurations(TestInvoker.java:676)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:660)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- PostExcution -->
-        <test-method is-config="true" signature="LaunchBrowser()[pri:0, instance:test.ZerodaLoginPageTest@201a4587]" started-at="2022-07-27T14:44:19 IST" name="LaunchBrowser" finished-at="2022-07-27T14:44:25 IST" duration-ms="6357" status="PASS">
+        </test-method> <!-- serachStockAndClickOnBuyWithRegularCNCMarketOrder -->
+        <test-method is-config="true" signature="ClosedtheLaunchBrowser()[pri:0, instance:test.ZerodaHomePageTest@771a660]" started-at="2022-08-31T20:24:28 IST" name="ClosedtheLaunchBrowser" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1661957668178" status="SKIP">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- LaunchBrowser -->
-        <test-method signature="forgetAccount()[pri:0, instance:test.ZerodaLoginPageTest@201a4587]" started-at="2022-07-27T14:44:25 IST" name="forgetAccount" finished-at="2022-07-27T14:44:29 IST" duration-ms="3675" status="PASS">
+        </test-method> <!-- ClosedtheLaunchBrowser -->
+        <test-method is-config="true" signature="PostExecution()[pri:0, instance:test.ZerodaHomePageTest@771a660]" started-at="2022-08-31T20:24:28 IST" name="PostExecution" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1661957668181" status="SKIP">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- forgetAccount -->
-        <test-method is-config="true" signature="PostExcution(org.testng.ITestResult)[pri:0, instance:test.ZerodaLoginPageTest@201a4587]" started-at="2022-07-27T14:44:29 IST" name="PostExcution" finished-at="2022-07-27T14:44:29 IST" duration-ms="603" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=forgetAccount status=SUCCESS method=ZerodaLoginPageTest.forgetAccount()[pri:0, instance:test.ZerodaLoginPageTest@201a4587] output={null}]]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- PostExecution -->
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:test.ZerodaHomePageTest@771a660]" started-at="2022-08-31T20:24:28 IST" name="launchBrowser" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1661957668185" status="SKIP">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- PostExcution -->
-        <test-method is-config="true" signature="ClosedBrowser()[pri:0, instance:test.ZerodaLoginPageTest@201a4587]" started-at="2022-07-27T14:44:29 IST" name="ClosedBrowser" finished-at="2022-07-27T14:44:32 IST" duration-ms="2486" status="PASS">
+        </test-method> <!-- launchBrowser -->
+        <test-method signature="serachStockAndClickOnSell()[pri:2, instance:test.ZerodaHomePageTest@771a660]" started-at="2022-08-31T20:24:28 IST" name="serachStockAndClickOnSell" finished-at="2022-08-31T20:24:28 IST" duration-ms="0" status="SKIP">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+at utility.Reports.PostExcution(Reports.java:43)
+at test.ZerodaHomePageTest.PostExecution(ZerodaHomePageTest.java:42)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:700)
+at org.testng.internal.TestInvoker.runAfterGroupsConfigurations(TestInvoker.java:676)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:660)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ClosedBrowser -->
-        <test-method is-config="true" signature="publishReport()[pri:0, instance:test.ZerodaLoginPageTest@201a4587]" started-at="2022-07-27T14:44:32 IST" name="publishReport" finished-at="2022-07-27T14:44:33 IST" duration-ms="1055" status="PASS">
+        </test-method> <!-- serachStockAndClickOnSell -->
+        <test-method is-config="true" signature="ClosedtheLaunchBrowser()[pri:0, instance:test.ZerodaHomePageTest@771a660]" started-at="2022-08-31T20:24:28 IST" name="ClosedtheLaunchBrowser" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1661957668257" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ClosedtheLaunchBrowser -->
+        <test-method is-config="true" signature="PostExecution()[pri:0, instance:test.ZerodaHomePageTest@771a660]" started-at="2022-08-31T20:24:28 IST" name="PostExecution" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1661957668262" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PostExecution -->
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:test.ZerodaHomePageTest@771a660]" started-at="2022-08-31T20:24:28 IST" name="launchBrowser" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1661957668272" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method signature="searchStockAndClickOnChart()[pri:3, instance:test.ZerodaHomePageTest@771a660]" started-at="2022-08-31T20:24:28 IST" name="searchStockAndClickOnChart" finished-at="2022-08-31T20:24:28 IST" duration-ms="0" status="SKIP">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+at utility.Reports.PostExcution(Reports.java:43)
+at test.ZerodaHomePageTest.PostExecution(ZerodaHomePageTest.java:42)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:700)
+at org.testng.internal.TestInvoker.runAfterGroupsConfigurations(TestInvoker.java:676)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:660)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchStockAndClickOnChart -->
+        <test-method is-config="true" signature="ClosedtheLaunchBrowser()[pri:0, instance:test.ZerodaHomePageTest@771a660]" started-at="2022-08-31T20:24:28 IST" name="ClosedtheLaunchBrowser" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1661957668294" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ClosedtheLaunchBrowser -->
+        <test-method is-config="true" signature="PostExecution()[pri:0, instance:test.ZerodaHomePageTest@771a660]" started-at="2022-08-31T20:24:28 IST" name="PostExecution" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1661957668297" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PostExecution -->
+        <test-method is-config="true" signature="publishReport()[pri:0, instance:test.ZerodaHomePageTest@771a660]" started-at="2022-08-31T20:24:28 IST" name="publishReport" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1661957668300" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- publishReport -->
-      </class> <!-- test.ZerodaLoginPageTest -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+      </class> <!-- test.ZerodaHomePageTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
